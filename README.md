@@ -10,3 +10,8 @@ y el número de libros que ha escrito.
 en cuyo argumento aparezca una subcadena dada.
 
 4. Mostrar todos los libros pertenecientes a un género dado.
+
+5. Mostrar el autor, el argumento y los géneros de un libro, cuyo título
+se pedirá por teclado, y se preguntará al usuario si desea comprarlo.
+Si es así, se mostrará por pantalla un enlace url al libro en Amazon para
+comprarlo.
