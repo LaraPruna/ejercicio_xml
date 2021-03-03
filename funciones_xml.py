@@ -65,3 +65,23 @@ def FiltroGenero(genero):
 	if ind:
 		print("No tenemos registrado ningún género con ese nombre.")
 		print()
+
+def InfoLibro(titulo):
+	libros=LeerXML().xpath("/authors/author/book")
+	ind=True
+	for lib in libros:
+		if titulo==lib.xpath("./@title")[0]:
+			print("Autor: "+lib.xpath("../@first")[0]+" "+lib.xpath("../@last")[0])
+			print("Generos:")
+			for gen in lib.xpath("./genre/text()"):
+				print(gen)
+			print("Argumento: "+lib.xpath("./argument/text()")[0])
+			ind=False
+	if ind:
+		print("Ese título no se encuentra registrada en nuestra librería.")
+
+def EnlaceCompra(titulo):
+	libros=LeerXML().xpath("/authors/author/book")
+	for lib in libros:
+		if titulo==lib.xpath("./@title")[0]:
+			print("Enlace de compra: "+lib.xpath("./url/text()")[0])

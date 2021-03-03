@@ -25,6 +25,7 @@ Opción: '''))
 while opcion!=6:
 	if opcion<1 or opcion>6:
 		print("Error. Introduce el número de la opción correcta.")
+		print()
 	elif opcion==1:
 		for libro in ListaLibros():
 			print("Título: "+libro.get("titulo"))
@@ -51,6 +52,16 @@ while opcion!=6:
 		print()
 		genero=input("Introduce el nombre de un género de la lista anterior: ")
 		FiltroGenero(genero)
+	elif opcion==5:
+		titulo=input("Introduce el título de un libro: ")
+		print()
+		InfoLibro(titulo)
+		print()
+		compra=input("¿Quieres comprar el libro? (s/n): ")
+		print()
+		if compra=="s":
+			EnlaceCompra(titulo)
+		print()
 	opcion=int(input('''Elige una opción del siguiente menú:
 
 1. Lista de libros
