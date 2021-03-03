@@ -19,6 +19,12 @@ while opcion!=6:
 			for gen in libro.get("genero"):
 				print(gen)
 			print()
+	elif opcion==2:
+		for autor in ListaAutores():
+			print("Nombre: "+autor.get("nombre")+" "+autor.get("apellido"))
+			print("Sexo: "+autor.get("sexo"))
+			print("Número de libros registrados: "+str(LibrosPorAutor()[ListaAutores().index(autor)]))
+			print()
 	opcion=int(input('''Elige una opción del siguiente menú:
 
 1. Lista de libros

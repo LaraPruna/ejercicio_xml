@@ -14,3 +14,21 @@ def ListaLibros():
 		libro["genero"]=elem.xpath(".//genre/text()")
 		lista.append(libro)
 	return lista
+
+def ListaAutores():
+	autores=LeerXML().xpath("/authors/author")
+	lista=[]
+	for elem in autores:
+		autor={}
+		autor["nombre"]=elem.xpath("./@first")[0]
+		autor["apellido"]=elem.xpath("./@last")[0]
+		autor["sexo"]=elem.xpath("./@gender")[0]
+		lista.append(autor)
+	return lista
+
+def LibrosPorAutor():
+	autores=LeerXML().xpath("/authors/author")
+	lista=[]
+	for elem in autores:
+		lista.append(len(elem.xpath("./book")))
+	return lista
