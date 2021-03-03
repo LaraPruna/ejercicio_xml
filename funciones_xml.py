@@ -32,3 +32,13 @@ def LibrosPorAutor():
 	for elem in autores:
 		lista.append(len(elem.xpath("./book")))
 	return lista
+
+def FiltroArgumento(sub):
+	libros=LeerXML().xpath("/authors/author/book")
+	argumentos=LeerXML().xpath("/authors/author/book/argument/text()")
+	lista=[]
+	for elem in libros:
+		if sub in elem.xpath("./argument/text()")[0]:
+			print("Titulo: "+elem.xpath("./@title")[0])
+			print("Autor: "+elem.xpath("../@first")[0]+" "+elem.xpath("../@last")[0])
+			print()

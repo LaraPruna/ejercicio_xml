@@ -8,7 +8,7 @@
             <genre> Philosophical novel </genre>
             <genre> Psychological fiction </genre>
             <genre> Crime fiction </genre>
-        </book>
+        </book>sub
         <book title="The Brothers Karamazov">
             <published>1879</published>
             <url> http://www.amazon.com/Brothers-Karamazov-Fyodor-Dostoevsky/dp/0374528373/</url>

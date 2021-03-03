@@ -25,6 +25,10 @@ while opcion!=6:
 			print("Sexo: "+autor.get("sexo"))
 			print("Número de libros registrados: "+str(LibrosPorAutor()[ListaAutores().index(autor)]))
 			print()
+	elif opcion==3:
+		sub=input("Introduce una subcadena: ")
+		print()
+		FiltroArgumento(sub)
 	opcion=int(input('''Elige una opción del siguiente menú:
 
 1. Lista de libros
