@@ -23,7 +23,9 @@ while opcion<1 or opcion>6:
 
 Opción: '''))
 while opcion!=6:
-	if opcion==1:
+	if opcion<1 or opcion>6:
+		print("Error. Introduce el número de la opción correcta.")
+	elif opcion==1:
 		for libro in ListaLibros():
 			print("Título: "+libro.get("titulo"))
 			print("Año: "+libro.get("anio"))
