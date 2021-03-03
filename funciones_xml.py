@@ -35,9 +35,33 @@ def LibrosPorAutor():
 
 def FiltroArgumento(sub):
 	libros=LeerXML().xpath("/authors/author/book")
+	ind=True
 	for elem in libros:
 		if sub in elem.xpath("./argument/text()")[0]:
 			print("Titulo: "+elem.xpath("./@title")[0])
 			print("Autor: "+elem.xpath("../@first")[0]+" "+elem.xpath("../@last")[0])
 			print()
+			ind=False
+	if ind:
+		print("Esa subcadena no aparece en el argumento de ninguno de los libros registrados.")
 
+def ListaGeneros():
+	generos=LeerXML().xpath("/authors/author/book/genre/text()")
+	lista=[]
+	for gen in generos:
+		if gen not in lista:
+			lista.append(gen)
+	return lista
+
+def FiltroGenero(genero):
+	libros=LeerXML().xpath("/authors/author/book")
+	ind=True
+	for lib in libros:
+		if genero in lib.xpath("./genre/text()"):
+			print("Titulo: "+lib.xpath("./@title")[0])
+			print("Autor: "+lib.xpath("../@first")[0]+" "+lib.xpath("../@last")[0])
+			print()
+			ind=False
+	if ind:
+		print("No tenemos registrado ningún género con ese nombre.")
+		print()

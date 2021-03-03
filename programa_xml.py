@@ -29,6 +29,14 @@ while opcion!=6:
 		sub=input("Introduce una subcadena: ")
 		print()
 		FiltroArgumento(sub)
+	elif opcion==4:
+		print("Lista de géneros registrados:")
+		print()
+		for gen in ListaGeneros():
+			print(gen)
+		print()
+		genero=input("Introduce el nombre de un género de la lista anterior: ")
+		FiltroGenero(genero)
 	opcion=int(input('''Elige una opción del siguiente menú:
 
 1. Lista de libros
