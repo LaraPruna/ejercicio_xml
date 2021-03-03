@@ -10,6 +10,18 @@ opcion=int(input('''Elige una opción del siguiente menú:
 6. Salir
 
 Opción: '''))
+while opcion<1 or opcion>6:
+	print("Error. Introduce el número de la opción correcta.")
+	opcion=int(input('''Elige una opción del siguiente menú:
+
+1. Lista de libros
+2. Número de libros por autor
+3. Buscar libros por subcadena del argumento
+4. Buscar libros por género
+5. Comprar libro
+6. Salir
+
+Opción: '''))
 while opcion!=6:
 	if opcion==1:
 		for libro in ListaLibros():
